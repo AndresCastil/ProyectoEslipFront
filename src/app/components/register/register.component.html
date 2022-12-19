@@ -1,0 +1,48 @@
+<div ng-app="myApp" ng-controller="myController" class="container">
+    <form [formGroup]="loginForm">
+      <div class="login-container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>nombre</label>
+              <input type="text" formControlName="username" required class="form-control">
+              <div  *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched " class="error">Required!</div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>dni</label>
+              <input type="text" formControlName="dni" required class="form-control">
+              <div  *ngIf="loginForm.get('dni')?.invalid && loginForm.get('username')?.touched" class="error">Required!</div>
+            </div>
+          </div>
+      
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>apellido</label>
+              <input type="text" formControlName="apellidos" required class="form-control">
+              <div  *ngIf="loginForm.get('apellidos')?.invalid && loginForm.get('username')?.touched" class="error">Required!</div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" formControlName="password" required class="form-control">
+              <div  *ngIf="loginForm.get('password')?.invalid && loginForm.get('username')?.touched" class="error">Required!</div>
+            </div>
+          </div>
+          <div class="col-md-12 mt-4">
+            <div class="form-group">
+              <button (click)="signup()" class="btn btn-success pull-right">Register</button>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="showError">
+          <div class="col-md-12" style="margin-top: 20px;">
+            <div ng-show="showError" class="alert alert-danger">Wrong credentials!</div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

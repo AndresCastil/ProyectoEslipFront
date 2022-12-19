@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+  }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+  /* Create four equal columns that sits next to each other */
+  .col {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+
+  .col img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 800px) {
+    .col {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .col {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
+  
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../../../assets/valle.jpg") top center;
+  background-size: cover;
+}
+.section-title {
+  padding-bottom: 30px;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #00a680;
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #00a680;
+  bottom: 0;
+  left: 50%;
+}
+.section-title p {
+  margin-bottom: 0;
+}
+.btn-success:hover{
+  background-color: white;
+  color: black;
+  border: 3px solid #00a680;
+}
+#hero:before {
+  /* content: "";
+  background: rgba(5, 13, 24, 0.3);
+  position: absolute;
+  bottom: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; */
+  position:relative;  
+  width:100%; 
+  height:500px; 
+  background:rgba(255,255,255,0.5); 
+}
+#hero .hero-container {
+  position: relative;
+  z-index: 2;
+  min-width: 300px;
+}
+#hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+}
+#hero p {
+  color: #fff;
+  margin-bottom: 50px;
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+}
+#hero p span {
+  color: #fff;
+  padding-bottom: 4px;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #149ddd;
+}
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+
+.how-section1{
+  margin-top:-15%;
+  padding: 10%;
+}
+.how-section1 h4{
+  font-weight: bolder;
+  font-size: 33px;
+}
+
+.how-section1 .row
+{
+  margin-top: 10%;
+}
+.how-img 
+{
+  text-align: center;
+}
+.how-img img{
+  width: 100%;
+  transition: transform .2s;
+}
+
+.how-img {
+ 
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.how-img:hover img {
+  transform: scale(1.2);
+}
+

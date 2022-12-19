@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-sm bg-light" *ngIf="!isUserLoggedIn && !isAdminLoggedIn">
+    <div class="container-fluid">
+  
+      <ul class="navbar-nav me-auto nav-dark">
+        <li class="nav-item" >
+          <p class="nav-link text-primary" routerLink="/"><strong>ESLIP Buscador de hoteles por población</strong></p>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/signup">Sign up</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+        </ul>
+    </form>
+    </div>
+  </nav>
+
+
+  <nav class="navbar navbar-expand-sm bg-light" *ngIf="isUserLoggedIn">
+    <div class="container-fluid">
+  
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <p class="nav-link text-primary" routerLink="/"><strong>ESLIP Buscador de hoteles por población</strong></p>
+        </li>
+      </ul>
+
+      <form class="d-flex">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+      </ul>
+    
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+      </ul>
+    </form>
+    </div>
+  </nav>
+
+
+  <nav class="navbar navbar-expand-sm bg-light" *ngIf="isAdminLoggedIn">
+    <div class="container-fluid">
+  
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <p class="nav-link text-primary" routerLink="/"><strong>ESLIP Buscador de hoteles por población</strong> (Admin View)</p>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/dashboard">panel</a>
+            </li>
+        </ul>
+       
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+      </ul>
+    </form>
+    </div>
+  </nav>

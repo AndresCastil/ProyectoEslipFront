@@ -1,0 +1,45 @@
+<div ng-app="myApp" ng-controller="myController" class="container">
+  <div class="alert alert-success d-flex align-items-center" role="alert" style="margin-top: 20px;" *ngIf="signupSuccess">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+      Tu cuenta ha sido creada con éxito. Puedes iniciar sesión aquí.
+    </div>
+  </div>
+  <div class="alert alert-danger d-flex align-items-center" role="alert" style="margin-top: 20px;" *ngIf="loginRequired">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+      Inicia sesión primero para realizar tú búsqueda.
+    </div>
+  </div>
+    <form [formGroup]="loginForm">
+      <div class="login-container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" formControlName="userName" required class="form-control">
+              <div  *ngIf="loginForm.get('username')?.invalid" class="error">Required!</div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" formControlName="password" required class="form-control">
+            
+            </div>
+          </div>
+          <div class="col-md-12 mt-4">
+            <div class="form-group">
+              <button (click)="login()" class="btn btn-success pull-right">Login</button>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="showError">
+          <div class="col-md-12" style="margin-top: 20px;">
+            <div ng-show="showError" class="alert alert-danger">Wrong credentials!</div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
